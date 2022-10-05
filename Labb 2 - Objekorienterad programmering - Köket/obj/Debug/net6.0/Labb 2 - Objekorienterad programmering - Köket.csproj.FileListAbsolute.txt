@@ -13,3 +13,18 @@ C:\Users\gusta\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\ob
 C:\Users\gusta\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.pdb
 C:\Users\gusta\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.genruntimeconfig.cache
 C:\Users\gusta\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\ref\Labb 2 - Objekorienterad programmering - Köket.dll
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\bin\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.exe
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\bin\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.deps.json
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\bin\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.runtimeconfig.json
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\bin\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.dll
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\bin\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.pdb
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.csproj.AssemblyReference.cache
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.AssemblyInfoInputs.cache
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.AssemblyInfo.cs
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.csproj.CoreCompileInputs.cache
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.dll
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\refint\Labb 2 - Objekorienterad programmering - Köket.dll
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.pdb
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\Labb 2 - Objekorienterad programmering - Köket.genruntimeconfig.cache
+C:\Users\Gustav Albert\Desktop\Labb 2\Labb 2 - Objekorienterad programmering - Köket\obj\Debug\net6.0\ref\Labb 2 - Objekorienterad programmering - Köket.dll
