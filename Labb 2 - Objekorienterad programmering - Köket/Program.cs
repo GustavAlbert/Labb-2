@@ -1,42 +1,38 @@
-﻿using Variables;
+﻿using Interface;
+using Variables;
 
 var meny = new Meny();
 
 
-bool Launch = true;
+bool Run = true;
 
-while (Launch = true)
+while (Run = true)
 {
     meny.Huvudmeny();
     int userInputMainMenu = Convert.ToInt32(Console.ReadLine());
     
-    if (userInputMainMenu == 1) 
+    if (userInputMainMenu == 1) //Använd köksapparat
     {
         Console.Clear();
-
-        break;
+        meny.Använd();
     }
-    else if (userInputMainMenu == 2)
+    else if (userInputMainMenu == 2) //Lägg till köksapparat
     {
         Console.Clear();
-        break;
     }
-    else if (userInputMainMenu == 3)
+    else if (userInputMainMenu == 3) //Lista köksapparater
     {
         Console.Clear();
-        break;
     }
-    else if (userInputMainMenu == 4)
+    else if (userInputMainMenu == 4) //Ta bort köksapparat
     {
         Console.Clear();
-        break;
     }
-    else if (userInputMainMenu == 5)
+    else if (userInputMainMenu == 5) //Avsluta
     {
         Console.Clear();
         Console.WriteLine("Programmet avslutades successfully");
-        Launch = false;
-        break;
+        Run = false;
     }
     else
     {
