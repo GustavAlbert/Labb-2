@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labb_2___Objekorienterad_programmering___Köket;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -25,6 +26,7 @@ namespace Variables
 {
     public class Meny
     {
+        List<Kitchenappliance> Köksapparater = new List<Kitchenappliance>(); //Skapar en instans av en lista innehållande typ Kitchenappliance
         public void Huvudmeny()
         {
             Console.WriteLine
@@ -39,56 +41,63 @@ namespace Variables
 
         public void Använd()
         {
-            List<string> Köksapparat = new List<string>();
-
-            Köksapparat.Add("Mikro");
-            Köksapparat.Add("Brödrost");
-            Köksapparat.Add("Ugn");
-            Köksapparat.Add("Mixer");
+            for (int i = 1; i < 5; i++)
+            {
+                Kitchenappliance kitchenappliance = new Kitchenappliance();
+                switch (i)
+                {
+                    case 1:
+                        kitchenappliance.Type = "Mikro";
+                        kitchenappliance.Brand = "Electrolux";
+                        kitchenappliance.IsFunctioning = true;
+                        kitchenappliance.ID = i;
+                        break;
+                    case 2:
+                        kitchenappliance.Type = "Brödrost";
+                        kitchenappliance.Brand = "Electrolux";
+                        kitchenappliance.IsFunctioning = true;
+                        kitchenappliance.ID = i;
+                        break;
+                    case 3:
+                        kitchenappliance.Type = "Ugn";
+                        kitchenappliance.Brand = "Electrolux";
+                        kitchenappliance.IsFunctioning = true;
+                        kitchenappliance.ID = i;
+                        break;
+                    case 4:
+                        kitchenappliance.Type = "Mixer";
+                        kitchenappliance.Brand = "Samsung";
+                        kitchenappliance.IsFunctioning = false;
+                        kitchenappliance.ID = i;
+                        break;
+                }
+                Köksapparater.Add(kitchenappliance);
+            }
 
             Console.WriteLine
-            ("=== Välj Köksapparat ===\n" +
-            "1. " + Köksapparat[0] + "\n" +
-            "2. " + Köksapparat[1] + "\n" +
-            "3. " + Köksapparat[2] + "\n" +
-            "4. " + Köksapparat[3] + "\n"); 
+            ("=== Välj Köksapparat ===");
 
-
-            /*
-            Console.WriteLine
-            ("=== Välj köksapparat ===\n" +
-            "1. Mikro\n" +
-            "2. Brödrost\n" +
-            "3. Ugn\n" +
-            "4. Mixer\n" +
-
-            "\n0. Annan Köksapparat\n" +
-            "-------------------------" +
-            "\nVälj Köksapparat:");
-            */
-
-            int usingmenu = Convert.ToInt32(Console.ReadLine());
-
-            if (usingmenu == 1)
+            foreach (Kitchenappliance appliance in Köksapparater)
             {
-                Console.WriteLine("Använder Mikro");
+                Console.WriteLine($"{appliance.ID}. {appliance.Type}. ");
             }
-            else if (usingmenu == 2)
+
+            var selectedAppliance = Console.ReadLine();
+            foreach (Kitchenappliance appliance in Köksapparater)
             {
-                Console.WriteLine("Användr Brödrost");
-            }
-            else if (usingmenu == 3)
-            {
-                Console.WriteLine("Använder Ugn");
-            }
-            else if(usingmenu == 4)
-            {
-                Console.WriteLine("Använder Mixer");
-            }
-            else if(usingmenu == 10)
-            {
-                Console.WriteLine("Du lägger nu in en ny kökapparat i programmet");
-                LäggTill();
+                //Console.WriteLine($"{appliance.ID}. {appliance.Type}. ");
+                if (appliance.ID.ToString() == selectedAppliance)
+                {
+                    if (appliance.IsFunctioning)
+                    {
+                        Console.WriteLine("Köksapparaten används nu");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Apparaten är ur funktion och " +
+                                          "kan inte användas för tillfället");
+                    }
+                }
             }
         }
 
