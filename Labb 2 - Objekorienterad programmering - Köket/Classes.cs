@@ -1,4 +1,5 @@
-﻿using Labb_2___Objekorienterad_programmering___Köket;
+﻿using Class.Inventory;
+using Labb_2___Objekorienterad_programmering___Köket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,20 +14,30 @@ namespace Interface
         string Type { get; set; }
         string Brand { get; set; }
         bool IsFunctioning { get; set; }
+        int ID { get; set; }
         void Use();
     }
 }
 
-namespace Classes
+namespace Class.Inventory
 {
+    public class ApplianceInventory
+    {
+        public string Appliance { get; set; }
+        public List<ApplianceInventory> localApplianceInventory { get; set; }
 
+        public ApplianceInventory(string type)
+        {
+            Appliance = type;
+        }
+    }
 }
 
 namespace Variables
 {
     public class Meny
     {
-        List<Kitchenappliance> Köksapparater = new List<Kitchenappliance>(); //Skapar en instans av en lista innehållande typ Kitchenappliance
+        //List<Kitchenappliances> Köksapparater = new List<Kitchenappliances>(); //Skapar en instans av en lista innehållande typ Kitchenappliance
         public void Huvudmeny()
         {
             Console.WriteLine
@@ -39,8 +50,8 @@ namespace Variables
             "Ange val:");
         }
 
-        public void Använd()
-        {
+         /*public void Använd()
+         {
             for (int i = 1; i < 5; i++)
             {
                 Kitchenappliance kitchenappliance = new Kitchenappliance();
@@ -100,6 +111,12 @@ namespace Variables
                 }
             }
         }
+        */
+       
+        public void Använd()
+        {
+
+        }
 
         public void LäggTill()
         {
@@ -108,7 +125,7 @@ namespace Variables
 
         public void Lista()
         {
-
+            
         }
 
         public void TaBort()

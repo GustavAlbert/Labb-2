@@ -19,4 +19,17 @@ namespace Labb_2___Objekorienterad_programmering___Köket
             throw new NotImplementedException();
         }
     }
+
+    public class Kitchenappliances
+    {
+        public string Type { get; set; }
+        public string Brand { get; set; }
+        public bool IsFunctioning { get; set; }
+        public int ID { get; set; }
+
+        void Use()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

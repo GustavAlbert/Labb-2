@@ -1,10 +1,15 @@
-﻿using Interface;
+﻿using Class.Inventory;
+using Interface;
+using Labb_2___Objekorienterad_programmering___Köket;
 using Variables;
 
 var meny = new Meny();
-
-
 bool Run = true;
+var globalApplianceInventory = new List<ApplianceInventory>()
+                             { new ApplianceInventory("Mixer") };
+
+//List<Kitchenappliances> Köksapparat = new List<Kitchenappliances>(); //Skapar en instans av en lista innehållande typ Kitchenappliance
+
 
 while (Run = true)
 {
@@ -23,6 +28,8 @@ while (Run = true)
     else if (userInputMainMenu == 3) //Lista köksapparater
     {
         Console.Clear();
+        meny.Lista();
+        Console.ReadLine();
     }
     else if (userInputMainMenu == 4) //Ta bort köksapparat
     {
@@ -31,7 +38,7 @@ while (Run = true)
     else if (userInputMainMenu == 5) //Avsluta
     {
         Console.Clear();
-        Console.WriteLine("Programmet avslutades successfully");
+        Console.WriteLine("Programmet har avslutats");
         Run = false;
     }
     else
