@@ -1,21 +1,24 @@
 ﻿using Class.Inventory;
 using Interface;
 using Labb_2___Objekorienterad_programmering___Köket;
+using System.Threading.Channels;
 using Variables;
 
+//Creating "meny."
 var meny = new Meny();
-bool Run = true;
-var globalApplianceInventory = new List<ApplianceInventory>()
-                             { new ApplianceInventory("Mixer") };
 
-//List<Kitchenappliances> Köksapparat = new List<Kitchenappliances>(); //Skapar en instans av en lista innehållande typ Kitchenappliance
+//Creating "ApplianceInventory."
+var kitchen = new Kitchen();
+
+//Run Software
+bool Run = true;
 
 
 while (Run = true)
 {
     meny.Huvudmeny();
     int userInputMainMenu = Convert.ToInt32(Console.ReadLine());
-    
+
     if (userInputMainMenu == 1) //Använd köksapparat
     {
         Console.Clear();
@@ -24,6 +27,11 @@ while (Run = true)
     else if (userInputMainMenu == 2) //Lägg till köksapparat
     {
         Console.Clear();
+        meny.LäggTill();
+        Console.WriteLine("Tryck valfri tangent för att återgå till meny");
+        Console.ReadLine();
+        Console.Clear();
+        meny.Huvudmeny();
     }
     else if (userInputMainMenu == 3) //Lista köksapparater
     {
@@ -38,8 +46,10 @@ while (Run = true)
     else if (userInputMainMenu == 5) //Avsluta
     {
         Console.Clear();
-        Console.WriteLine("Programmet har avslutats");
+        Console.WriteLine("Programmet har avslutats\n" + 
+            "Du kan ny stänga fönstret.");
         Run = false;
+        return;
     }
     else
     {
@@ -47,5 +57,8 @@ while (Run = true)
         Console.WriteLine
             ("Du har angett ett ogiltigt val\n" +
             "Vänligen försök igen.");
+        meny.Huvudmeny();
+        return;
     }
 }
+
