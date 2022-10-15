@@ -162,7 +162,7 @@ namespace Variables
 
         }
 
-        public void LäggTill()
+        public void LäggTill()  
         {
             bool IsVerifiedToAdd = true;
             Console.WriteLine("=== Lägg till ny köksutrustning ===\n");
@@ -171,17 +171,21 @@ namespace Variables
             if (type == string.Empty)
             {
                 IsVerifiedToAdd = false;
-                Console.WriteLine("Du har angivit ett blankt svar, köksutrustningen har inte lagts in.");
+                Console.WriteLine
+                    ("Du har angivit ett blankt svar, köksutrustningen kan inte läggas in med ett blankt svar i detta fält.");
+                LäggTill();
             }
             Console.Write("Ange tillverkare: ");
             var brand = Console.ReadLine();
             if (brand == string.Empty)
             {
                 IsVerifiedToAdd = false;
-                Console.WriteLine("Du har angivit ett blankt svar, köksutrustningen har inte lagts in.");
+                Console.WriteLine
+                    ("Du har angivit ett blankt svar, köksutrustningen kan inte läggas in med ett blankt svar i detta fält.");
+                LäggTill();
             }
             Console.Write("Är produkten fungerande? j/n: ");
-            var qfunctional = Console.ReadLine();
+            var qfunctional = Console.ReadLine(); //Svar på frågeställningen om utrustningen är i funktionellt bruk. 
             bool functional = false;
             if ((qfunctional == "j") || (qfunctional == "J"))
             {
