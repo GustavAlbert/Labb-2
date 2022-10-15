@@ -3,6 +3,7 @@ using Interface;
 using Labb_2___Objekorienterad_programmering___Köket;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -24,17 +25,6 @@ namespace Interface
 
 namespace Class.Inventory
 {
-    //public class ApplianceInventory
-    //{
-    //    public string Appliance { get; set; }
-    //    public List<ApplianceInventory> localApplianceInventory { get; set; }
-
-    //    public ApplianceInventory(string type)
-    //    {
-    //        Appliance = type;
-    //    }
-    //}
-
     public class Kitchen
     {
         public List<Inventory> Inventories { get; set; } = new List<Inventory>();
@@ -72,7 +62,15 @@ namespace Class.Inventory
 
         public void Use()
         {
-            throw new NotImplementedException();
+            Console.Write(Brand + " " + Type);
+            if (IsFunctioning)
+            {
+                Console.WriteLine(" används nu.");
+            }
+            else
+            {
+                Console.WriteLine(" är ur funktion och kan därför inte användas.");
+            }
         }
     }
 }
@@ -81,7 +79,8 @@ namespace Variables
 {
     public class Meny
     {
-        Kitchen kitchen = new Kitchen(); 
+        public Kitchen kitchen = new Kitchen(); 
+
         public void Huvudmeny()
         {
             Console.WriteLine
@@ -93,73 +92,17 @@ namespace Variables
             "5. Avsluta\n" +
             "Ange val:");
         }
-
-         /*public void Använd()
-         {
-            for (int i = 1; i < 5; i++)
-            {
-                Kitchenappliance kitchenappliance = new Kitchenappliance();
-                switch (i)
-                {
-                    case 1:
-                        kitchenappliance.Type = "Mikro";
-                        kitchenappliance.Brand = "Electrolux";
-                        kitchenappliance.IsFunctioning = true;
-                        kitchenappliance.ID = i;
-                        break;
-                    case 2:
-                        kitchenappliance.Type = "Brödrost";
-                        kitchenappliance.Brand = "Electrolux";
-                        kitchenappliance.IsFunctioning = true;
-                        kitchenappliance.ID = i;
-                        break;
-                    case 3:
-                        kitchenappliance.Type = "Ugn";
-                        kitchenappliance.Brand = "Electrolux";
-                        kitchenappliance.IsFunctioning = true;
-                        kitchenappliance.ID = i;
-                        break;
-                    case 4:
-                        kitchenappliance.Type = "Mixer";
-                        kitchenappliance.Brand = "Samsung";
-                        kitchenappliance.IsFunctioning = false;
-                        kitchenappliance.ID = i;
-                        break;
-                }
-                Köksapparater.Add(kitchenappliance);
-            }
-
-            Console.WriteLine
-            ("=== Välj Köksapparat ===");
-
-            foreach (Kitchenappliance appliance in Köksapparater)
-            {
-                Console.WriteLine($"{appliance.ID}. {appliance.Type}. ");
-            }
-
-            var selectedAppliance = Console.ReadLine();
-            foreach (Kitchenappliance appliance in Köksapparater)
-            {
-                //Console.WriteLine($"{appliance.ID}. {appliance.Type}. ");
-                if (appliance.ID.ToString() == selectedAppliance)
-                {
-                    if (appliance.IsFunctioning)
-                    {
-                        Console.WriteLine("Köksapparaten används nu");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Apparaten är ur funktion och " +
-                                          "kan inte användas för tillfället");
-                    }
-                }
-            }
-        }
-        */
-       
+ 
         public void Använd()
         {
-
+            Console.WriteLine("Ange numret för den produkt du vill använda");
+            NumreradLista();
+            Console.WriteLine("-------------------");
+            int usingproduct = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            kitchen.Inventories[usingproduct - 1].Use();
+            Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
+            Console.ReadLine();
         }
 
         public void LäggTill()  
@@ -202,8 +145,8 @@ namespace Variables
             }
             if (IsVerifiedToAdd == true)
             {
-                Console.WriteLine
-                    ("--------------------" + "\n" + type + " har lagts in i systemet successfully!");
+                Console.WriteLine("--------------------");
+                Console.WriteLine(type + " har lagts in i systemet successfully!");
                 kitchen.LäggTill(new Inventory(type, brand, functional));
             }
             else 
@@ -222,10 +165,26 @@ namespace Variables
             }
         }
 
-        public void TaBort()
+        public void NumreradLista()
         {
-
+            int ListItemID = 1;
+            foreach (var inventory in kitchen.Inventories)
+            {
+                Console.Write(ListItemID + " ");
+                Console.WriteLine(inventory.ListSpecifications());
+                ListItemID++;
+            }
         }
+
+    public void TaBort()
+        {
+            NumreradLista();
+            Console.WriteLine("Mata in numret på den köksprodukt du vill ta bort från listan.");
+            int type = Convert.ToInt32(Console.ReadLine());
+            kitchen.Inventories.RemoveAt(type - 1);
+            Console.WriteLine();
+        }
+
 
         //public void E()
 

@@ -1,21 +1,29 @@
 ﻿using Class.Inventory;
 using Interface;
 using Labb_2___Objekorienterad_programmering___Köket;
+using System.Data.SqlTypes;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Threading.Channels;
 using Variables;
+
+// !!! VARIABEL - SMÅ BOKSTÄVER !!!
+// !!! VARIABLER - Ljus blåa !!!
 
 //Creating "meny."
 var meny = new Meny();
 
-//Creating "ApplianceInventory."
-var kitchen = new Kitchen();
-
 //Run Software
-bool Run = true;
+bool run = true;
+
+//
+meny.kitchen.Inventories.Add(new Inventory("Ugn", "SMEG", true));
+meny.kitchen.Inventories.Add(new Inventory("Kyl", "SMEG", true));
+meny.kitchen.Inventories.Add(new Inventory("Frys", "SMEG", true));
+meny.kitchen.Inventories.Add(new Inventory("Spis", "SMEG", true));
 
 
-
-while (Run = true)
+while (run == true)
 {
     meny.Huvudmeny();
     int userInputMainMenu = Convert.ToInt32(Console.ReadLine());
@@ -24,6 +32,7 @@ while (Run = true)
     {
         Console.Clear();
         meny.Använd();
+        Console.Clear();
     }
     else if (userInputMainMenu == 2) //Lägg till köksapparat
     {
@@ -50,9 +59,8 @@ while (Run = true)
     {
         Console.Clear();
         Console.WriteLine("Programmet har avslutats\n" + 
-            "Du kan nu stänga fönstret.");
-        Run = false;
-        return;
+            "Du kan nu stänga fönstret eller klicka Enter tangenten.");
+        run = false;
     }
     else
     {
@@ -60,8 +68,6 @@ while (Run = true)
         Console.WriteLine
             ("Du har angett ett ogiltigt val\n" +
             "Vänligen försök igen.");
-        meny.Huvudmeny();
-        return;
     }
 }
 
