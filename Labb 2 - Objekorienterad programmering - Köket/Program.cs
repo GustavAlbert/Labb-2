@@ -14,6 +14,7 @@ var kitchen = new Kitchen();
 bool Run = true;
 
 
+
 while (Run = true)
 {
     meny.Huvudmeny();
@@ -28,26 +29,28 @@ while (Run = true)
     {
         Console.Clear();
         meny.LäggTill();
-        Console.WriteLine("Tryck valfri tangent för att återgå till meny");
+        Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
         Console.ReadLine();
         Console.Clear();
-        meny.Huvudmeny();
     }
     else if (userInputMainMenu == 3) //Lista köksapparater
     {
         Console.Clear();
         meny.Lista();
+        Console.WriteLine("\n \n Tryck Enter för att återgå till huvudmenyn");
         Console.ReadLine();
+        Console.Clear();
     }
     else if (userInputMainMenu == 4) //Ta bort köksapparat
     {
         Console.Clear();
+        meny.TaBort();
     }
     else if (userInputMainMenu == 5) //Avsluta
     {
         Console.Clear();
         Console.WriteLine("Programmet har avslutats\n" + 
-            "Du kan ny stänga fönstret.");
+            "Du kan nu stänga fönstret.");
         Run = false;
         return;
     }

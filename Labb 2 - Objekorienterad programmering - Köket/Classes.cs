@@ -180,7 +180,7 @@ namespace Variables
                 IsVerifiedToAdd = false;
                 Console.WriteLine("Du har angivit ett blankt svar, köksutrustningen har inte lagts in.");
             }
-            Console.Write("Är produkten fungerande? j/n");
+            Console.Write("Är produkten fungerande? j/n: ");
             var qfunctional = Console.ReadLine();
             bool functional = false;
             if ((qfunctional == "j") || (qfunctional == "J"))
@@ -198,8 +198,15 @@ namespace Variables
             }
             if (IsVerifiedToAdd == true)
             {
-                Console.WriteLine(type + "har lagts in i systemet successfully!");
+                Console.WriteLine
+                    ("--------------------" + "\n" + type + " har lagts in i systemet successfully!");
                 kitchen.LäggTill(new Inventory(type, brand, functional));
+            }
+            else 
+            {
+                Console.Clear();
+                Console.WriteLine("Förutsättningarna för att lägga till en ny köksprodukt har inte uppfyllts, vänligen försök igen");
+                LäggTill();
             }
         }
 
