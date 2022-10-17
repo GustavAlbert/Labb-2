@@ -5,7 +5,7 @@ using System.Data.SqlTypes;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Threading.Channels;
-using Variables;
+using MyMethods;
 
 // !!! VARIABEL - SMÅ BOKSTÄVER !!!
 // !!! VARIABLER - Ljus blåa !!!

@@ -75,11 +75,11 @@ namespace Class.Inventory
     }
 }
 
-namespace Variables
+namespace MyMethods
 {
     public class Meny
     {
-        public Kitchen kitchen = new Kitchen(); 
+        public Kitchen kitchen = new Kitchen();
 
         public void Huvudmeny()
         {
@@ -101,8 +101,7 @@ namespace Variables
             int usingproduct = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
             kitchen.Inventories[usingproduct - 1].Use();
-            Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
-            Console.ReadLine();
+            ReturnToMainMenu();
         }
 
         public void LäggTill()  
@@ -146,7 +145,7 @@ namespace Variables
             if (IsVerifiedToAdd == true)
             {
                 Console.WriteLine("--------------------");
-                Console.WriteLine(type + " har lagts in i systemet successfully!");
+                Console.WriteLine(brand + type + " har lagts in i systemet och finns nu tillgänglig i utrustningslistan");
                 kitchen.LäggTill(new Inventory(type, brand, functional));
             }
             else 
@@ -165,7 +164,19 @@ namespace Variables
             }
         }
 
-        public void NumreradLista()
+
+        public void TaBort()
+            {
+                NumreradLista();
+                Console.WriteLine("Mata in numret på den köksprodukt du vill ta bort från listan.");
+                int itemid = Convert.ToInt32(Console.ReadLine()); 
+                           //Item ID är siffran i listan som är kopplad till den specifika utrustningen användaren vill ta bort. 
+                kitchen.Inventories.RemoveAt(itemid - 1);
+                Console.WriteLine("Köksutrustning " + itemid + " har tagits bort från listan.");
+                ReturnToMainMenu();
+        }
+
+        public void NumreradLista() //Gör listan av inventarier numrerad. 
         {
             int ListItemID = 1;
             foreach (var inventory in kitchen.Inventories)
@@ -176,21 +187,16 @@ namespace Variables
             }
         }
 
-    public void TaBort()
+        public void ReturnToMainMenu() //Återgå till hvuudmeny. 
         {
-            NumreradLista();
-            Console.WriteLine("Mata in numret på den köksprodukt du vill ta bort från listan.");
-            int type = Convert.ToInt32(Console.ReadLine());
-            kitchen.Inventories.RemoveAt(type - 1);
-            Console.WriteLine();
+            Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
+            Console.ReadLine();
+            Console.Clear();
         }
 
+        //public void H()
 
-        //public void E()
-
-        //public void F()
-
-        //public void G()
+        //public void I()
     }
 }
 
