@@ -17,10 +17,10 @@ var meny = new Meny();
 bool run = true;
 
 //
-meny.kitchen.Inventories.Add(new Inventory("Ugn", "SMEG", true));
+meny.kitchen.Inventories.Add(new Inventory("Ugn", "Electrolux", true));
 meny.kitchen.Inventories.Add(new Inventory("Kyl", "SMEG", true));
 meny.kitchen.Inventories.Add(new Inventory("Frys", "SMEG", true));
-meny.kitchen.Inventories.Add(new Inventory("Spis", "SMEG", true));
+meny.kitchen.Inventories.Add(new Inventory("Spis", "Siemens", true));
 
 
 meny.Huvudmeny();
