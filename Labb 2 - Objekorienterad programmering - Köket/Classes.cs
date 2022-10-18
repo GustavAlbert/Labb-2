@@ -92,7 +92,7 @@ namespace MyMethods
             "5. Avsluta\n" +
             "Ange val:");
         }
- 
+
         public void Använd()
         {
             Console.WriteLine("Ange numret för den produkt du vill använda");
@@ -104,7 +104,7 @@ namespace MyMethods
             ReturnToMainMenu();
         }
 
-        public void LäggTill()  
+        public void LäggTill()
         {
             bool IsVerifiedToAdd = true;
             Console.WriteLine("=== Lägg till ny köksutrustning ===\n");
@@ -135,24 +135,38 @@ namespace MyMethods
             }
             else if ((qfunctional == "n") || (qfunctional == "N"))
             {
-                functional= false;
+                functional = false;
             }
             else
             {
                 Console.WriteLine("Du har angivit ett ogitligt val, vänligen försök igen.");
-                IsVerifiedToAdd=false;
+                IsVerifiedToAdd = false;
             }
             if (IsVerifiedToAdd == true)
             {
                 Console.WriteLine("--------------------");
-                Console.WriteLine(brand + type + " har lagts in i systemet och finns nu tillgänglig i utrustningslistan");
+                Console.WriteLine(brand + " " + type + " har lagts in i systemet och finns nu tillgänglig i utrustningslistan");
                 kitchen.LäggTill(new Inventory(type, brand, functional));
             }
-            else 
+            else
             {
                 Console.Clear();
-                Console.WriteLine("Förutsättningarna för att lägga till en ny köksprodukt har inte uppfyllts, vänligen försök igen");
-                LäggTill();
+                Console.WriteLine("Förutsättningarna för att lägga till en ny köksprodukt har inte uppfyllts, vänligen försök igen\n" +
+                                  " 1) Försök igen\n 2) Huvudmeny\n" + "----------");
+                int adderrormessagechoice = Convert.ToInt32(Console.ReadLine());
+                if (adderrormessagechoice == 1)
+                {
+                    LäggTill();
+                }
+                else if (adderrormessagechoice == 2)
+                {
+                    ReturnToMainMenu();
+                }
+                else
+                {
+                    Console.WriteLine("Ogiltigt val, försök igen");
+                    return;
+                }
             }
         }
 
@@ -166,16 +180,21 @@ namespace MyMethods
 
 
         public void TaBort()
-            {
-                NumreradLista();
-                Console.WriteLine("Mata in numret på den köksprodukt du vill ta bort från listan.");
-                int itemid = Convert.ToInt32(Console.ReadLine()); 
-                           //Item ID är siffran i listan som är kopplad till den specifika utrustningen användaren vill ta bort. 
-                kitchen.Inventories.RemoveAt(itemid - 1);
-                Console.WriteLine("Köksutrustning " + itemid + " har tagits bort från listan.");
-                ReturnToMainMenu();
+        {
+            NumreradLista();
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Mata in numret på den köksprodukt du vill ta bort från listan.");
+            int itemid = Convert.ToInt32(Console.ReadLine());
+            //Item ID är siffran i listan som är kopplad till den specifika utrustningen användaren vill ta bort. 
+            kitchen.Inventories.RemoveAt(itemid - 1);
+            //Console.WriteLine("Köksutrustning " + itemid + " har tagits bort från listan.");
+            Console.Clear();
+            NumreradLista();
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Köksutrustningen har tagits bort från listan.");
+            ReturnToMainMenu();
         }
-
+        
         public void NumreradLista() //Gör listan av inventarier numrerad. 
         {
             int ListItemID = 1;
@@ -190,8 +209,7 @@ namespace MyMethods
         public void ReturnToMainMenu() //Återgå till hvuudmeny. 
         {
             Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
-            Console.ReadLine();
-            Console.Clear();
+            //Console.ReadLine();
         }
 
         //public void H()

@@ -33,13 +33,13 @@ try
     {
         Console.Clear();
         meny.Använd();
-        Console.Clear();
+        //Console.Clear();
     }
     else if (userInputMainMenu == 2) //Lägg till köksapparat
     {
         Console.Clear();
         meny.LäggTill();
-        Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
+        //Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
         Console.ReadLine();
         Console.Clear();
     }
@@ -47,7 +47,7 @@ try
     {
         Console.Clear();
         meny.Lista();
-        Console.WriteLine("\n \n Tryck Enter för att återgå till huvudmenyn");
+        //Console.WriteLine("\n \n Tryck Enter för att återgå till huvudmenyn");
         Console.ReadLine();
         Console.Clear();
     }
@@ -68,7 +68,7 @@ catch
 {
     Console.WriteLine
         ("Du har angett ett ogiltigt val\n" +
-        "Du omdirigeras nu till huvudmeny.");
+        "Enter tangent för att omdirigeras till huvudmeny.");
     Console.ReadLine();
     Console.Clear();
     meny.Huvudmeny();
@@ -77,20 +77,19 @@ catch
 /*
 while (run == true)
 {
-    meny.Huvudmeny();
     int userInputMainMenu = Convert.ToInt32(Console.ReadLine());
 
     if (userInputMainMenu == 1) //Använd köksapparat
     {
         Console.Clear();
         meny.Använd();
-        Console.Clear();
+        //Console.Clear();
     }
     else if (userInputMainMenu == 2) //Lägg till köksapparat
     {
         Console.Clear();
         meny.LäggTill();
-        Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
+        //Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
         Console.ReadLine();
         Console.Clear();
     }
@@ -98,7 +97,7 @@ while (run == true)
     {
         Console.Clear();
         meny.Lista();
-        Console.WriteLine("\n \n Tryck Enter för att återgå till huvudmenyn");
+        //Console.WriteLine("\n \n Tryck Enter för att återgå till huvudmenyn");
         Console.ReadLine();
         Console.Clear();
     }
@@ -110,16 +109,9 @@ while (run == true)
     else if (userInputMainMenu == 5) //Avsluta
     {
         Console.Clear();
-        Console.WriteLine("Programmet har avslutats\n" + 
+        Console.WriteLine("Programmet har avslutats\n" +
             "Du kan nu stänga fönstret eller klicka Enter tangenten.");
         run = false;
-    }
-    else
-    {
-        Console.Clear();
-        Console.WriteLine
-            ("Du har angett ett ogiltigt val\n" +
-            "Vänligen försök igen.");
     }
 }
 */
