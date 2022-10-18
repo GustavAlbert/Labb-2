@@ -84,18 +84,19 @@ namespace MyMethods
         public void Huvudmeny()
         {
             Console.WriteLine
-            ("===== Köket =====\n" +
+            ("======= Köket =======\n" +
             "1. Använd köksapparat\n" +
             "2. Lägg till Köksapparat\n" +
             "3. Lista köksapparat\n" +
             "4. Ta bort köksapparat\n" +
             "5. Avsluta\n" +
+            "--------------------\n" +
             "Ange val:");
         }
 
         public void Använd()
         {
-            Console.WriteLine("Ange numret för den produkt du vill använda");
+            Console.WriteLine("Ange numret för den produkt du vill använda\n" + "--------------------");
             NumreradLista();
             Console.WriteLine("-------------------");
             int usingproduct = Convert.ToInt32(Console.ReadLine());
@@ -176,6 +177,8 @@ namespace MyMethods
             {
                 Console.WriteLine(inventory.ListSpecifications());
             }
+            Console.WriteLine("--------------------\n");
+            ReturnToMainMenu();
         }
 
 
@@ -211,7 +214,7 @@ namespace MyMethods
             Console.WriteLine("Tryck Enter för att återgå till huvudmenyn");
             //Console.ReadLine();
         }
-
+        
         //public void H()
 
         //public void I()
